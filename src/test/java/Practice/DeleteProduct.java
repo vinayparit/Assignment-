@@ -6,6 +6,7 @@ public class DeleteProduct {
 	@Test
 	public void deleteProduct() {
 		System.out.println("product deleted");
+		System.out.println("Updated script");
 	}
 	
 
