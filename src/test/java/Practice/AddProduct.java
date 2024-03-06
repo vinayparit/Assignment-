@@ -6,7 +6,7 @@ public class AddProduct {
 	
 	@Test
 	public void addProduct() {
-		System.out.println("product added");
+		System.out.println("product deleleted");
 	}
 
 }
