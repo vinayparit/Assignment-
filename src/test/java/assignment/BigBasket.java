@@ -23,28 +23,26 @@ public class BigBasket {
 		Actions action = new Actions(driver);
 
 		driver.get("https://www.bigbasket.com/");
-		Robot r=new Robot();
+		Robot r = new Robot();
 		try {
-			for(int i=0;i<=3;i++) {
+			for (int i = 0; i <= 3; i++) {
 				r.keyPress(KeyEvent.VK_CONTROL);
 				r.keyPress(KeyEvent.VK_MINUS);
 				r.keyRelease(KeyEvent.VK_CONTROL);
 				r.keyRelease(KeyEvent.VK_MINUS);
-				
+
 			}
 		} catch (Exception e) {
 			r.keyPress(KeyEvent.VK_MINUS);
 			r.keyRelease(KeyEvent.VK_MINUS);
 		}
 		driver.findElement(By.xpath("//button[@id=\"headlessui-menu-button-:R5bab6:\"]")).click();
-//		List<WebElement> cutsAndSprouts = driver
-//				.findElements(By.xpath("//a[contains(@href,\"/pc/fruits-vegetables/cuts-sprouts/c\")]"));
+
 		List<WebElement> main = driver.findElements(By.xpath(
 				"//div[@id='headlessui-menu-items-:R9bab6:']/descendant::ul[@class='jsx-1259984711 w-56 px-2.5 bg-darkOnyx-800 text-silverSurfer-100 rounded-l-xs']/child::li[@class='jsx-1259984711']"));
 		int i = 0;
 		for (WebElement ref : main) {
-//			String mainItems=ref.getText();
-//			System.out.println("Main Items List----->" +mainItems);
+
 			action.moveToElement(ref).perform();
 			List<WebElement> sub1 = driver.findElements(By.xpath(
 					"//div[@id='headlessui-menu-items-:R9bab6:']/descendant::ul[@class=\"jsx-1259984711 w-56 px-2.5 bg-silverSurfer-200 text-darkOnyx-800\"]/child::li[@class=\"jsx-1259984711\"]"));
@@ -54,18 +52,17 @@ public class BigBasket {
 				System.out.println("----------------");
 				List<WebElement> subMenu = driver.findElements(By.xpath(
 						"//li[@class=\"jsx-1259984711\"]/ancestor::div[@id='headlessui-menu-items-:R9bab6:']/descendant::ul[@class=\"jsx-1259984711 w-56 px-2.5 bg-white text-darkOnyx-800 rounded-r-xs\"]"));
-//				System.out.println(sub1.get(i).getText());
-//				i++;
+
 				for (WebElement subMenuEle : subMenu) {
-					
+
 					System.out.println(subMenuEle.getText());
 					System.out.println();
-					
+
 				}
-				
+
 			}
-			
+
 		}
-		
+
 	}
 }
