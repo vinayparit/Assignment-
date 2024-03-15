@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 public class EmiCalculator {
 
 	@Test
-	public void emiCalculator() {
+	public void emiCalculator() throws InterruptedException {
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -39,18 +39,32 @@ public class EmiCalculator {
 
 			}
 		}
-		
-		List<WebElement> barToolTip = driver.findElements(By.cssSelector(
-				"[class=\"highcharts-series highcharts-series-1 highcharts-column-series highcharts-tracker highcharts-series-hover\"] [class=\"highcharts-point\"]"));
-		for (WebElement ref2 : barToolTip) {
+		System.out.println("---Top Bar Data---");
+		driver.navigate().refresh();
+		List<WebElement> topBarToolTip = driver.findElements(By.cssSelector(
+				"[class=\"highcharts-series highcharts-series-0 highcharts-column-series highcharts-tracker\"] [class=\"highcharts-point\"]"));
+		for (WebElement ref2 : topBarToolTip) {
 			action.moveToElement(ref2).perform();
-			List<WebElement> barData = driver.findElements(
+			List<WebElement> topBarData = driver.findElements(
 					By.cssSelector("[class=\"highcharts-label highcharts-tooltip highcharts-color-undefined\"]"));
-			for (WebElement ref3 : barData) {
-
-				System.out.println(ref3.getText());
+			for (WebElement data : topBarData) {
+				System.out.println(data.getText());
+				System.out.println();
 			}
 		}
-
+		
+		System.out.println("---Bot Bar Data---");
+		driver.navigate().refresh();
+		List<WebElement> botBarToolTip = driver.findElements(By.cssSelector(
+				"[class=\"highcharts-series highcharts-series-1 highcharts-column-series highcharts-tracker\"] [class=\"highcharts-point\"]"));
+		for (WebElement ref2 : botBarToolTip) {
+			action.moveToElement(ref2).perform();
+			List<WebElement> topBarData = driver.findElements(
+					By.cssSelector("[class=\"highcharts-label highcharts-tooltip highcharts-color-undefined\"]"));
+			for (WebElement data : topBarData) {
+				System.out.println(data.getText());
+				System.out.println();
+			}
+		}
 	}
 }
