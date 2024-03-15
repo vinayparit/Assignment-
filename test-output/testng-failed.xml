@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="assignment.EmiCalculator">
+      <class name="assignment.CricbuzzTest">
         <methods>
-          <include name="emiCalculator"/>
+          <include name="cricbuzzTest"/>
         </methods>
-      </class> <!-- assignment.EmiCalculator -->
+      </class> <!-- assignment.CricbuzzTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
