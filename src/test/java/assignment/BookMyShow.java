@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
@@ -15,14 +16,14 @@ public class BookMyShow {
 	@Test
 	public void bookMyShow() throws InterruptedException
 	{
-		WebDriver driver = new ChromeDriver();
+		WebDriver driver = new FirefoxDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(30));
 
 		driver.get("https://bookmyshow.com/");
 		driver.findElement(By.xpath("//img[@alt=\"BANG\"]")).click();
-		driver.findElement(By.xpath("//img[@alt=\"Dune: Part Two\"]")).click();
+		driver.findElement(By.xpath("//img[@alt=\"Tillu Square\"]")).click();
 //		driver.findElement(By.xpath("//div[@class='sc-qswwm9-5 ghYvew']/descendant::span[.='Book tickets']")).click();
 //		WebElement d2=driver.findElement(By.xpath("//div[@class='sc-qswwm9-5 ghYvew']/descendant::span[.='Book tickets']"));
 //		wait.until(ExpectedConditions.elementToBeClickable(d2));

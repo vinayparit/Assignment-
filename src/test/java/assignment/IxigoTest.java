@@ -32,6 +32,11 @@ public class IxigoTest {
 //		driver.findElement(By.xpath("//input[contains(@value,'Bengaluru')]")).clear();
 //		wait.until(ExpectedConditions.elementToBeClickable(click));
 //		driver.switchTo().activeElement().sendKeys("mumbai");
+		
+		
+		WebElement to=driver.findElement(By.cssSelector("[data-testid=\"destinationId\"]"));
+		action.doubleClick(to).perform();
+//		to.sendKeys("bangalore");
 
 	}
 }
