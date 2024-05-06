@@ -23,6 +23,8 @@ public class Fireflink {
 		driver.findElement(By.name("password")).sendKeys("Vinay@123");
 		driver.findElement(By.cssSelector("[class=\"signup_orange_button signing_in\"]")).click();
 		driver.findElement(By.cssSelector("[alt=\"fireFlinkPlatform\"]")).click();
-		
+		Mmt date=new Mmt();
+		date.date(driver, "May 2024", "5");
+				
 	}
 }

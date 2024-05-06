@@ -7,25 +7,25 @@ import java.time.Duration;
 import java.util.List;
 import java.util.Random;
 
-import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
+
 import org.openqa.selenium.By;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+
 import org.testng.annotations.Test;
 
-public class FlipKartTest
-{
-	Random ran=new Random();
+public class FlipKartTest {
+	Random ran = new Random();
 	int randomNum = ran.nextInt(100);
 
 	@Test
-	public void flipkart() throws IOException 
-	{
+	public void flipkart() throws IOException {
 
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
@@ -40,21 +40,20 @@ public class FlipKartTest
 
 		FileInputStream fis = new FileInputStream(".\\src\\test\\resources\\AssignmentData.xlsx");
 		Workbook wb = WorkbookFactory.create(fis);
-		Sheet sh = wb.createSheet("Iphone" +randomNum);
-		for (int i = 0; i < mobiles.size(); i++) 
-		{
+		Sheet sh = wb.createSheet("Iphone" + randomNum);
+		for (int i = 0; i < mobiles.size(); i++) {
 			Row row = sh.createRow(i);
 
-			for (int j = 0; j < 1; j++) 
-			{
+			for (int j = 0; j < 1; j++) {
 				row.createCell(j).setCellValue(mobiles.get(i).getText());
-				row.createCell(j+1).setCellValue(price.get(i).getText());
+				row.createCell(j + 1).setCellValue(price.get(i).getText());
 			}
 		}
-		
-		FileOutputStream fos=new FileOutputStream(".\\src\\test\\resources\\AssignmentData.xlsx");
+
+		FileOutputStream fos = new FileOutputStream(".\\src\\test\\resources\\AssignmentData.xlsx");
 		wb.write(fos);
 		wb.close();
 
 	}
+
 }

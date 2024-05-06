@@ -31,7 +31,7 @@ public class Interview {
 		WebDriver driver=new ChromeDriver();
 		
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
 //		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(20)); 
 		driver.get("https://www.google.com/");
@@ -40,10 +40,14 @@ public class Interview {
 			
 		Actions action=new Actions(driver);
 		
-		action.scrollByAmount(0,20000).perform();
+		
 //		WebDriverWait wait=new WebDriverWait(driver, Duration.of)
 		List<WebElement> names = driver.findElements(By.xpath("//*[contains(.,'Vinay')]"));
-		
+		for (WebElement we : names) {
+			
+			action.moveToElement(we).perform();
+			
+		}
 		System.out.println(names.size());
 		if(names.size()>50000)
 		{
@@ -53,7 +57,6 @@ public class Interview {
 		{
 			TakesScreenshot ts=(TakesScreenshot) driver;
 			File src = ts.getScreenshotAs(OutputType.FILE);
-			
 			File dst = new File(".\\Assignments\\ScreenShot"+localDateTime+".png");
 			FileUtils.copyFile(src, dst);
 			System.out.println("Fail");
