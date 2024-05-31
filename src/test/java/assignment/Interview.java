@@ -43,11 +43,12 @@ public class Interview {
 		
 //		WebDriverWait wait=new WebDriverWait(driver, Duration.of)
 		List<WebElement> names = driver.findElements(By.xpath("//*[contains(.,'Vinay')]"));
-		for (WebElement we : names) {
-			
-			action.moveToElement(we).perform();
-			
-		}
+//		for (WebElement we : names) {
+//			
+//			action.moveToElement(we).perform();
+//			
+//		}
+		action.scrollByAmount(0, 50000).perform();
 		System.out.println(names.size());
 		if(names.size()>50000)
 		{

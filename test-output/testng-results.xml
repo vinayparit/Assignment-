@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-05-09T11:21:47 IST" name="Default suite" finished-at="2024-05-09T11:22:29 IST" duration-ms="42910">
+  <suite started-at="2024-05-31T16:05:04 IST" name="Default suite" finished-at="2024-05-31T16:05:24 IST" duration-ms="19174">
     <groups>
     </groups>
-    <test started-at="2024-05-09T11:21:47 IST" name="Default test" finished-at="2024-05-09T11:22:29 IST" duration-ms="42910">
-      <class name="assignment.Amazon">
-        <test-method signature="login()[pri:0, instance:assignment.Amazon@34123d65]" started-at="2024-05-09T11:21:47 IST" name="login" finished-at="2024-05-09T11:22:29 IST" duration-ms="42843" status="PASS">
+    <test started-at="2024-05-31T16:05:04 IST" name="Default test" finished-at="2024-05-31T16:05:24 IST" duration-ms="19174">
+      <class name="assignment.ReadPdf">
+        <test-method signature="readPdf()[pri:0, instance:assignment.ReadPdf@639c2c1d]" started-at="2024-05-31T16:05:05 IST" name="readPdf" finished-at="2024-05-31T16:05:24 IST" duration-ms="19052" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- login -->
-      </class> <!-- assignment.Amazon -->
+        </test-method> <!-- readPdf -->
+      </class> <!-- assignment.ReadPdf -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
